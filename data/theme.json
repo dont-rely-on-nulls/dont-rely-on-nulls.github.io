@@ -3,9 +3,9 @@
     "default": {
       "theme_color": {
         "primary": "#9b3333",
-        "body": "#f6f6f6",
+        "body": "#fff",
         "border": "#de3535",
-        "theme_light": "#f7f4ee",
+        "theme_light": "#f8f8f8",
         "theme_dark": ""
       },
       "text_color": {
@@ -16,10 +16,10 @@
     },
     "darkmode": {
       "theme_color": {
-        "primary": "#fff",
-        "body": "#1c1c1c",
-        "border": "#3E3E3E",
-        "theme_light": "#222222",
+        "primary": "#f7f4ee",
+        "body": "#252525",
+        "border": "#fff",
+        "theme_light": "#1c1c1c",
         "theme_dark": ""
       },
       "text_color": {

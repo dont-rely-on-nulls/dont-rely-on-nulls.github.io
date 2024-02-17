@@ -1,8 +1,19 @@
 ---
 # Banner
 banner:
-  title: "The Ultimate Starter Template You Need To Start Your Hugo Project"
-  content: "Hugoplate is a free starter template built with Hugo and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
+  title: "Don't rely on Nulls, rely on us"
+  content: 
+    "Welcome to Don't rely on Nulls, where we merge practical expertise in functional programming with a commitment to delivering solutions on time and within budget. As a boutique, we focus on efficient delivery at low cost, without compromising on quality.
+
+    At Don't rely on Nulls, we value grounded ideas and the pursuit of improvement. Our team of dedicated professionals values both practical and abstract strategies to create reliable software solutions that meet our clients' requirements.
+
+    Integrity is paramount to our approach. We adhere to the highest ethical standards and craftsmanship to ensure our solutions align seamlessly with our clients'  objectives.
+
+    Collaboration is at the heart of our ethos. We value partnerships with the open-source community, fostering an environment where diverse perspectives converge to shape tailored solutions.
+
+    In a rapidly evolving tech landscape, we remain humble learners. Our team embraces ongoing education and exploration to shape the future of software development.
+
+    Choose Don't rely on Nulls for dependable software solutions. Join us on a journey where practical innovation meets philosophical reflection, guided by our expertise in functional programming, towards a brighter digital horizon."
   image: "/images/banner.png"
   button:
     enable: true
