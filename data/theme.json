@@ -10,21 +10,21 @@
       },
       "text_color": {
         "default": "#444444",
-        "dark": "#040404",
+        "dark": "#252525",
         "light": "#717171"
       }
     },
     "darkmode": {
       "theme_color": {
-        "primary": "#f7f4ee",
+        "primary": "#f4f7ee",
         "body": "#252525",
-        "border": "#fff",
+        "border": "#f4f7ee",
         "theme_light": "#1c1c1c",
         "theme_dark": ""
       },
       "text_color": {
         "default": "#B4AFB6",
-        "dark": "#fff",
+        "dark": "#f4f7ee",
         "light": "#B4AFB6"
       }
     }
