@@ -1,1 +1,6 @@
 // Add your own custom styles here
+.column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
