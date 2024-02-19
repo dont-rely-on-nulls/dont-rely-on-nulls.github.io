@@ -5,6 +5,7 @@ title: "Team"
 Our team members shared a rare trait in the current landscape of software development: we have
 indescribable levels of **fun** when producing software that fulfills its purpose. This reached a
 certain point in which we all grouped up to create the study group <a href="https://github.com/Dr-Nekoma" target="_blank" style="text-decoration:underline">Dr.Nekoma</a>.
+
 <br>
 This group is dedicated to explore distinct programming languages to tackle a myriad of problems in different
 domains. From games, to databases, to programming languages, we do it all in the pursuit of leveraging different
