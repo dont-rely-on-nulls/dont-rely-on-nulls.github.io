@@ -7,13 +7,17 @@ banner:
 
 # Features
 features:
-  - title: "Efficiency at the best Price"
-    image: "/images/service-1.png"
-    content: "Welcome to Don't rely on Nulls, where we merge practical expertise in functional programming with a commitment to delivering solutions on time and within budget. As a boutique, we focus on efficient delivery at low cost, without compromising on quality. At Don't rely on Nulls, we value grounded ideas and the pursuit of improvement. Our team of dedicated professionals values both practical and abstract strategies to create reliable software solutions that meet our clients' requirements."
-
   - title: "Culture based on Humility"
     image: "/images/service-2.png"
-    content: "Integrity is paramount to our approach. We adhere to the highest ethical standards and craftsmanship to ensure our solutions align seamlessly with our clients' objectives. In a rapidly evolving tech landscape, we remain humble learners. Our team embraces ongoing education and exploration to shape the future of software development. Collaboration is at the heart of our ethos. We value partnerships with the open-source community, fostering an environment where diverse perspectives converge to shape tailored solutions."
+    content: "Integrity is paramount to our approach. We adhere to the highest ethical standards and craftsmanship to ensure our solutions align seamlessly with our clients' objectives. In a rapidly evolving tech landscape, we remain humble learners, valuing grounded ideas and the pursuit of improvement. Our team embraces ongoing education and exploration to shape the future of software development. Collaboration is at the heart of our ethos. We value partnerships with the open-source community, fostering an environment where diverse perspectives converge to shape tailored solutions."
+    button:
+      enable: true
+      label: "Get to know Us"
+      link: "team"
+
+  - title: "Efficiency at the best Price"
+    image: "/images/service-1.png"
+    content: "Welcome to Don't rely on Nulls, where we merge practical expertise in functional programming with a commitment to delivering solutions on time and within budget. As a boutique, we focus on efficient delivery at low cost, without compromising on quality and transparency. Our team of dedicated professionals values both practical and abstract strategies to create reliable software solutions that meet our clients' requirements."
 
   - title: "Business Value via FP"
     image: "/images/service-3.png"

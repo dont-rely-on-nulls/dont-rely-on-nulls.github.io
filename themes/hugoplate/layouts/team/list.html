@@ -1,6 +1,17 @@
 {{ define "main" }}
   {{ partial "page-header" . }}
 
+ <section style="padding-top:7em">
+   <div class="container">
+     <div class="row justify-center">
+       <div class="lg:col-10 md:col-9 mb-8">
+         <p class="h5">
+           {{ .Content | markdownify }}
+         </p>
+       </div>
+     </div>
+   </div>
+ </section>
 
   <section class="section">
     <div class="container">
