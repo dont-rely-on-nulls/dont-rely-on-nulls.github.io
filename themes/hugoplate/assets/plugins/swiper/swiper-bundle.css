@@ -525,7 +525,7 @@ button.swiper-pagination-bullet {
   animation: swiper-preloader-spin 1s infinite linear;
 }
 .swiper-lazy-preloader-white {
-  --swiper-preloader-color: #fff;
+  --swiper-preloader-color: #fffffd;
 }
 .swiper-lazy-preloader-black {
   --swiper-preloader-color: #000;
