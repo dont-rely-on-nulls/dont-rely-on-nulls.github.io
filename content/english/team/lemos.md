@@ -12,4 +12,4 @@ social:
     link: https://www.linkedin.com/in/eduardo-lemos-rocha-3198a5149/
 ---
 
-Aspiring to be a true Hacker. Addicted to Computer Science with a special place for Functional Programming.
+Aspiring to be a true Hacker. Addicted to Computer Science and all its beauty with a special place for Functional Programming.

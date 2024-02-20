@@ -15,9 +15,9 @@
     <span>{{ .Title }}</span>
   </h4>
   <p class="mb-4">
-    {{ .Summary }}
+    {{ .Content }}
   </p>
-  <ul class="social-icons">
+  <ul class="social-icons" style="padding-top: 15px">
     {{ range .Params.social }}
       <li>
         <a href="{{ .link | safeURL }}" target="_blank" rel="noopener nofollow">
