@@ -8,4 +8,4 @@ social:
     link: https://github.com/z-silver
 ---
 
-Lisp user. Forth admirer. A bit crazy about PEG parsing. Dislikes Python.
+Lisp user. Forth admirer. A bit crazy about PEG parsing. Occasional chess player.
