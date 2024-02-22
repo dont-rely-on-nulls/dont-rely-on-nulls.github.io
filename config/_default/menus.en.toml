@@ -11,10 +11,10 @@ name = "Team"
 url = "team/"
 weight = 1
 
-# [[main]]
-# name = "About"
-# url = "about/"
-# weight = 2
+[[main]]
+name = "Projects"
+url = "projects/"
+weight = 1
 
 # [[main]]
 # name = "Elements"

@@ -1,0 +1,18 @@
+<div class="bg-theme-light dark:bg-darkmode-theme-light rounded p-8 text-center author-card-container">
+  <h4 class="mb-6">
+    <span style="text-decoration-color: {{ .Params.Color }}" class="project-card-title">{{ .Title }}</span>
+  </h4>
+  <p class="mb-4">
+    {{ .Content }}
+  </p>
+  <ul class="social-icons" style="padding-top: 15px">
+    {{ range .Params.social }}
+    <li>
+      <a href="{{ .link | safeURL }}" target="_blank" rel="noopener nofollow">
+        <span class="sr-only">{{ .title }}</span>
+        <i class="{{ .icon }}"></i>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
