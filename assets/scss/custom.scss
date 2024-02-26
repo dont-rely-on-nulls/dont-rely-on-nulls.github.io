@@ -17,3 +17,10 @@
   transform: translateX(-50%);
   bottom: 32px;
 }
+
+.project-card-title {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+  line-height: 48px;
+}

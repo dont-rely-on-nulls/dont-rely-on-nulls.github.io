@@ -1,0 +1,50 @@
+{{ define "main" }}
+{{ partial "page-header" . }}
+
+<section style="padding-top:7em">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="lg:col-10 md:col-9 mb-8 text-lg">
+        <p class="h5">
+          {{ .Content | markdownify }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{{ if where .RegularPages ".Type" "official"}}
+<section class="section">
+  <div class="container">
+    <h2 class="text-center mb-10">Official Projects</h2>
+
+    <div class="row">
+      {{ range where .RegularPages ".Type" "official" }}
+      <div class="md:col-4 lg:col-3 mb-14">
+        {{ partial "components/project-card" . }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ if where .RegularPages ".Type" "hobby"}}
+<section class="section">
+  <div class="container">
+    <h2 class="text-center mb-10">Hobby Projects</h2>
+
+    <div class=" row">
+      {{ range where .RegularPages ".Type" "hobby" }}
+      <div class="md:col-4 lg:col-3 mb-14">
+        {{ partial "components/project-card" . }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+{{ end }}
