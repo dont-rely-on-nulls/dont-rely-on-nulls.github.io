@@ -9,7 +9,7 @@ banner:
 features:
   - title: "Quality as Paramount"
     image: "/images/service-1.png"
-    content: "In our projects, we merge professional expertise with our flamable passion in functional programming --- all of it with a commitment to delivering solutions on time and within budget. From the ground up, we leverage both practical and theoretical strategies to create reliable software solutions that meet our clients' requirements whilst aiming to exceed expectations. We value partnerships with the open-source community, fostering an environment where diverse perspectives converge to shape tailored solutions that best fit the product."
+    content: "In our projects, we merge professional expertise with our blazing passion in functional programming --- all of it with a commitment to delivering solutions on time and within budget. From the ground up, we leverage both practical and theoretical strategies to create reliable software solutions that meet our clients' requirements whilst aiming to exceed expectations. We value partnerships with the open-source community, fostering an environment where diverse perspectives converge to shape tailored solutions that best fit the product."
     button:
       enable: true
       label: "Get to know Us"
@@ -25,7 +25,7 @@ features:
 
   - title: "Business Value via FP"
     image: "/images/service-3.png"
-    content: "Your project is great, hence you are anxious about it. Here are the good news: we are here for you. Choose Don't rely on Nulls for dependable software solutions; something that you can rely on. Together, we will conquer the fear of deploying your treasure into the real world. We have the from first principles ideas, the tools, and the will to make it work. Take a deep breath: you are one small step away from a brighter digital horizon --- even if it is from zero you should not be afraid. The outcome will be pretty, and maintanable enough that you'd like to frame it. What are you waiting for?"
+    content: "Your project is great, hence you are anxious about it. Here are the good news: we are here to join your team. Choose Don't rely on Nulls for dependable software solutions; something that you can rely on. Together, we will conquer the fear of deploying your treasure into the real world. We have the from-first-principles ideas, the tools, and the will to make it work. Take a deep breath: you are one small step away from a brighter digital horizon --- even if it is from zero you should not be afraid. The outcome will be pretty, and maintanable enough that you'd like to frame it. What are you waiting for?"
     button:
       enable: true
       label: "Get Started Now"
