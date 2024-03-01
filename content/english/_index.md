@@ -9,7 +9,7 @@ banner:
 features:
   - title: "Quality as Paramount"
     image: "/images/service-1.png"
-    content: "In our projects, we merge practical expertise in functional programming with a commitment to delivering solutions on time and within budget --- you can trust us that your product will fly in no time. As a boutique, we focus on efficient delivery at low cost, without compromising on quality and transparency. Our team of dedicated professionals leverages both practical and abstract strategies to create reliable software solutions that meet our clients' requirements.  We value partnerships with the open-source community, fostering an environment where diverse perspectives converge to shape tailored solutions that best fit the product."
+    content: "In our projects, we merge practical expertise in functional programming with a commitment to delivering solutions on time and within budget --- you can trust us that your product will fly in no time. We focus on efficient delivery at low cost, without compromising on quality and transparency. Our team of dedicated professionals leverages both practical and abstract strategies to create reliable software solutions that meet our clients' requirements. We value partnerships with the open-source community, fostering an environment where diverse perspectives converge to shape tailored solutions that best fit the product."
     button:
       enable: true
       label: "Get to know Us"
