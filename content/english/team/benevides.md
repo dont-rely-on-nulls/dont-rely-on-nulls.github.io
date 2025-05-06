@@ -5,7 +5,7 @@ description: this is a meta description
 social:
   - name: github
     icon: fa-brands fa-github
-    link: https://github.com/mtrsk
+    link: https://github.com/schonfinkel
 
   - name: linkedin
     icon: fa-brands fa-linkedin
