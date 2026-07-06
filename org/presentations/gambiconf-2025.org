@@ -1,0 +1,4 @@
+#+TITLE: Gambiconf 2025 - Criando um "MMO-RPG" com Zig, Erlang, Nix e PostgreSQL (e Emacs)
+#+DATE: 2025-09-27
+#+PDF: https://dont-rely-on-nulls.github.io/gambiconf-2025/presentation.pdf
+#+OPTIONS: toc:nil
