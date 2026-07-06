@@ -1,0 +1,395 @@
+/* ============================================================
+   DrN Website — style.css
+   Targets Org-mode's ox-html output
+   ============================================================ */
+
+/* --- Google Fonts ------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap');
+
+/* --- Theme (light) ------------------------------------------------ */
+:root {
+  --color-primary: #9b3333;
+  --color-body-bg: #fffffd;
+  --color-text: #444444;
+  --color-text-dark: #252525;
+  --color-text-light: #717171;
+  --color-border: #de3535;
+  --color-theme-light: #f8f8f8;
+
+  --font-primary: Heebo, sans-serif;
+  --font-secondary: Signika, sans-serif;
+  --font-size-base: 16px;
+  --line-height: 1.625;
+
+  --max-width: 1320px;
+  --nav-height: 70px;
+}
+
+/* --- Dark mode (class toggle) ------------------------------------- */
+html.dark {
+  --color-primary: #fffffd;
+  --color-body-bg: #252525;
+  --color-text: #B4AFB6;
+  --color-text-dark: #fffffd;
+  --color-text-light: #B4AFB6;
+  --color-border: #fffffd;
+  --color-theme-light: #1c1c1c;
+}
+
+/* System dark mode (when no explicit theme set) */
+@media (prefers-color-scheme: dark) {
+  html:not(.light) {
+    --color-primary: #fffffd;
+    --color-body-bg: #252525;
+    --color-text: #B4AFB6;
+    --color-text-dark: #fffffd;
+    --color-text-light: #B4AFB6;
+    --color-border: #fffffd;
+    --color-theme-light: #1c1c1c;
+  }
+}
+
+/* ================================================================
+   RESET & BASE
+   ================================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background-color: var(--color-body-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ================================================================
+   TYPOGRAPHY
+   ================================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-text-dark);
+}
+
+h1, .h1 { font-size: clamp(1.563rem, 4vw, 2.441rem); }
+h2, .h2 { font-size: clamp(1.25rem, 3vw, 1.953rem); }
+h3, .h3 { font-size: clamp(1.125rem, 2vw, 1.563rem); }
+h4, .h4 { font-size: 1.25rem; font-weight: 500; }
+h5, .h5 { font-size: 1rem; font-weight: 500; }
+h6, .h6 { font-size: 0.889rem; font-weight: 500; }
+
+h2, h3, h4, h5, h6 { margin-top: 1.5em; margin-bottom: 0.5em; }
+h1 { margin-bottom: 0.75em; }
+
+a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+a:hover { color: var(--color-primary); }
+
+p { margin-bottom: 1.25rem; }
+
+strong, b { font-weight: 600; color: var(--color-text-dark); }
+
+img { max-width: 100%; height: auto; border-radius: 4px; }
+
+/* ================================================================
+   BLOCKQUOTE
+   ================================================================ */
+blockquote {
+  margin: 2rem 0;
+  padding: 2rem 2rem 2rem 2.5rem;
+  border-left: 10px solid var(--color-primary);
+  border-radius: 8px;
+  background: var(--color-theme-light);
+  font-family: var(--font-secondary);
+  font-size: 1.25rem;
+  color: var(--color-text-dark);
+}
+blockquote p { margin-bottom: 0; }
+
+/* ================================================================
+   CODE
+   ================================================================ */
+code {
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.875em;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  background: var(--color-theme-light);
+}
+
+pre {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border-radius: 8px;
+  background: var(--color-theme-light);
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+pre code { padding: 0; background: none; font-size: inherit; }
+
+/* ================================================================
+   TABLES
+   ================================================================ */
+table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+th, td { padding: 0.75rem 1rem; text-align: left; border: 1px solid var(--color-border); }
+th { background: var(--color-theme-light); font-family: var(--font-secondary); font-weight: 700; color: var(--color-text-dark); }
+
+/* ================================================================
+   LISTS / HR
+   ================================================================ */
+ul, ol { margin: 0 0 1.25rem 1.5rem; }
+li { margin-bottom: 0.25rem; }
+hr { margin: 2rem 0; border: none; border-top: 1px solid var(--color-border); }
+
+/* ================================================================
+   NAVIGATION
+   ================================================================ */
+#preamble {
+  width: 100%;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: var(--color-body-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  height: var(--nav-height);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.nav-logo img { height: 38px; width: auto; border-radius: 0; }
+
+/* Show/hide logo based on theme */
+.logo-dark  { display: none; }
+html.dark .logo-dark { display: block; }
+html.dark .logo-light { display: none; }
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .logo-dark { display: block; }
+  html:not(.light) .logo-light { display: none; }
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.25rem;
+}
+.nav-links li { margin: 0; }
+.nav-links a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-links a:hover { color: var(--color-primary); background: var(--color-theme-light); }
+
+/* ================================================================
+   THEME TOGGLE
+   ================================================================ */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--color-text-dark);
+  transition: background 0.2s;
+  margin-left: 0.5rem;
+}
+.theme-toggle:hover { background: var(--color-theme-light); }
+
+/* ================================================================
+   MAIN LAYOUT
+   ================================================================ */
+#content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+.site-content { padding-top: 1rem; }
+main#content { min-height: 70vh; }
+
+/* Section-style outlines */
+.outline-2 {
+  padding: 4rem 0;
+}
+.outline-2 + .outline-2 {
+  border-top: 1px solid var(--color-border);
+}
+
+/* ================================================================
+   BUTTONS
+   ================================================================ */
+.btn {
+  display: inline-block;
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+.btn-primary:hover { background: #7a2828; color: #fff; }
+
+html.dark .btn-primary {
+  background: #fff; color: #252525; border-color: #fff;
+}
+html.dark .btn-primary:hover {
+  background: #ddd; color: #252525;
+}
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .btn-primary {
+    background: #fff; color: #252525; border-color: #fff;
+  }
+  html:not(.light) .btn-primary:hover {
+    background: #ddd; color: #252525;
+  }
+}
+
+/* ================================================================
+   BLOG CARDS
+   ================================================================ */
+.blog-card {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.blog-card:last-child { border-bottom: none; }
+.blog-card h2 { margin-top: 0; }
+.blog-card h2 a { text-decoration: none; color: var(--color-text-dark); }
+.blog-card h2 a:hover { color: var(--color-primary); }
+.blog-card time { font-size: 0.875rem; color: var(--color-text-light); }
+
+/* ================================================================
+   TAGS
+   ================================================================ */
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  background: var(--color-theme-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+#postamble {
+  width: 100%;
+}
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 2rem 1.5rem;
+  background: var(--color-theme-light);
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+.footer-logo img { height: 32px; width: auto; border-radius: 0; }
+
+.footer-social { display: flex; gap: 1rem; }
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  background: var(--color-primary);
+  color: #fff;
+  transition: background 0.2s;
+}
+.footer-social a:hover { background: #7a2828; }
+
+html.dark .footer-social a { background: #fff; color: #252525; }
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .footer-social a { background: #fff; color: #252525; }
+}
+
+.footer-copy {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+/* ================================================================
+   HELPERS / TEAM
+   ================================================================ */
+.profile-img {
+  border-radius: 50%;
+  object-fit: cover;
+  float: left;
+  margin: 0 1.25rem 0.5rem 0;
+}
+.text-center { text-align: center; }
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 768px) {
+  h1 { font-size: 1.563rem; }
+  h2 { font-size: 1.25rem; }
+  .nav-inner { padding: 0 1rem; }
+  .nav-links a { padding: 0.5rem; font-size: 0.875rem; }
+  #content { padding: 1.5rem 1rem 3rem; }
+  .outline-2 { padding: 2.5rem 0; }
+}
