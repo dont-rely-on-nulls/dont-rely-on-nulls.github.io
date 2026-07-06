@@ -43,6 +43,7 @@
 (defvar static-css-dir (expand-file-name "css" static-dir))
 (defvar org-dir (expand-file-name "org" root-dir))
 (defvar blog-dir (expand-file-name "blog" org-dir))
+(defvar presentations-dir (expand-file-name "presentations" org-dir))
 (defvar roam-dir (expand-file-name "codex" org-dir))
 
 (defvar out-dir (expand-file-name "public" root-dir))
@@ -109,6 +110,38 @@
      (lambda (e)
         (format "\n    <article class=\"blog-card\">\n      <h2><a href=\"%s/blog/%s.html\">%s</a></h2>\n      <time datetime=\"%s\">%s</time>\n    </article>"
                 root-href (nth 2 e) (nth 1 e) (nth 0 e) (nth 0 e)))
+     entries "")))
+
+(defun drn/get-org-keyword (filepath keyword)
+  "Extract value of KEYWORD (e.g. \"PDF\") from FILEPATH, or nil."
+  (with-temp-buffer
+    (insert-file-contents filepath)
+    (goto-char (point-min))
+    (when (re-search-forward
+           (format "^#\\+%s:[ \t]*\\(.*\\)$" (regexp-quote keyword)) nil t)
+      (let ((val (string-trim (match-string 1))))
+        (unless (string-empty-p val) val)))))
+
+(defun drn/generate-presentation-list ()
+  "Return HTML list of presentations, sorted anti-chronologically.
+Each presentation Org file supplies #+TITLE:, #+DATE: and #+PDF:
+\(the URL of the compiled LaTeX PDF)."
+  (let* ((files (directory-files presentations-dir t "\\.org$"))
+         (entries '()))
+    (dolist (f files)
+      (let* ((fname (file-name-nondirectory f))
+             (slug (file-name-sans-extension fname)))
+        (unless (or (string-prefix-p "." fname)
+                    (string= slug "index"))
+          (let ((title (drn/get-org-title f))
+                (date  (drn/get-org-date f))
+                (pdf   (drn/get-org-keyword f "PDF")))
+            (push (list date title (or pdf (format "%s.pdf" slug))) entries)))))
+    (setq entries (sort entries (lambda (a b) (string> (car a) (car b)))))
+    (mapconcat
+     (lambda (e)
+        (format "\n    <article class=\"blog-card\">\n      <h2><a href=\"%s\" target=\"_blank\" rel=\"noopener\">%s</a></h2>\n      <time datetime=\"%s\">%s</time>\n    </article>"
+                (nth 2 e) (nth 1 e) (nth 0 e) (nth 0 e)))
      entries "")))
 
 ;;; org-roam

@@ -32,17 +32,26 @@
       perSystem =
         { pkgs, system, ... }:
         let
-          customEmacs = (pkgs.emacsPackagesFor pkgs.emacs-nox).emacsWithPackages (
+          emacsPkgs = (pkgs.emacsPackagesFor pkgs.emacs-nox).overrideScope (self: super: {
+            org = super.org.overrideAttrs (old: {
+              src = pkgs.fetchurl {
+                url = "https://elpa.gnu.org/packages/org-9.8.6.tar";
+                hash = "sha256-QyrhwAW55Y4vtgMbIjSQOkNr+8uTSmXdumi2qc8dTIE=";
+              };
+            });
+          });
+
+          customEmacs = emacsPkgs.emacsWithPackages (
             epkgs:
             with epkgs.melpaPackages; [
               citeproc
               htmlize
               ox-rss
             ]
-            ++ (with epkgs.elpaPackages; [
-              org
-              org-roam
-            ])
+            ++ [
+              epkgs.org
+              epkgs.org-roam
+            ]
           );
         in
         {
