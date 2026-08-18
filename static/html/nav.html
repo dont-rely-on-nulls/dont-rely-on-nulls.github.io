@@ -7,11 +7,10 @@
     <ul class="nav-links">
       <li><a href="%ROOT%/index.html">Home</a></li>
       <li><a href="%ROOT%/blog/index.html">Blog</a></li>
-      <li><a href="%ROOT%/codex/index.html">Codex</a></li>
       <li><a href="%ROOT%/team/index.html">Team</a></li>
       <li><a href="%ROOT%/presentations/index.html">Presentations</a></li>
       <li><a href="%ROOT%/projects/index.html">Projects</a></li>
     </ul>
-    <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;h.classList.contains('light')?h.className='dark':h.classList.contains('dark')?h.className='':h.className='dark';localStorage.setItem('theme',h.className||'auto')})()">☀</button>
+    <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;var n=h.classList.contains('dark')?'light':'dark';h.className=n;localStorage.setItem('theme',n);})()">☀</button>
   </div>
 </nav>
