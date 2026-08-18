@@ -1,4 +1,4 @@
-.PHONY: build clean serve
+.PHONY: build clean
 
 PREFIX ?= ./public
 export ENVIRONMENT ?= dev
@@ -13,6 +13,3 @@ build:
 clean:
 	@rm -rf public/ build.log
 	@echo "✓ Cleaned"
-
-serve:
-	@python3 -m http.server 8080 --directory public/

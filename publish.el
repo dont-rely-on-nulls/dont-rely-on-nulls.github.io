@@ -124,8 +124,8 @@
 
 (defun drn/generate-presentation-list ()
   "Return HTML list of presentations, sorted anti-chronologically.
-Each presentation Org file supplies #+TITLE:, #+DATE: and #+PDF:
-\(the URL of the compiled LaTeX PDF)."
+Each presentation Org file supplies #+TITLE:, #+DATE: and #+AUTHOR:.
+Entries link to the presentation's own page."
   (let* ((files (directory-files presentations-dir t "\\.org$"))
          (entries '()))
     (dolist (f files)
@@ -135,13 +135,16 @@ Each presentation Org file supplies #+TITLE:, #+DATE: and #+PDF:
                     (string= slug "index"))
           (let ((title (drn/get-org-title f))
                 (date  (drn/get-org-date f))
-                (pdf   (drn/get-org-keyword f "PDF")))
-            (push (list date title (or pdf (format "%s.pdf" slug))) entries)))))
+                (author (drn/get-org-keyword f "AUTHOR")))
+            (push (list date title author slug) entries)))))
     (setq entries (sort entries (lambda (a b) (string> (car a) (car b)))))
     (mapconcat
      (lambda (e)
-        (format "\n    <article class=\"blog-card\">\n      <h2><a href=\"%s\" target=\"_blank\" rel=\"noopener\">%s</a></h2>\n      <time datetime=\"%s\">%s</time>\n    </article>"
-                (nth 2 e) (nth 1 e) (nth 0 e) (nth 0 e)))
+       (let ((author-html (if (nth 2 e)
+                              (format " by: <span class=\"presenter\">\"%s\"</span>" (nth 2 e))
+                            "")))
+         (format "\n    <article class=\"blog-card\">\n      <h2><a href=\"%s/presentations/%s.html\">%s</a></h2>\n      <time datetime=\"%s\">%s</time>%s\n    </article>"
+                 root-href (nth 3 e) (nth 1 e) (nth 0 e) (nth 0 e) author-html)))
      entries "")))
 
 ;;; org-roam

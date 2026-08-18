@@ -6,9 +6,10 @@
 <link rel="stylesheet" href="static/css/style.css">
 <script>
 (function(){
-  var cls = localStorage.getItem('theme');
-  if (cls === 'dark' || cls === 'light') {
-    document.documentElement.className = cls;
+  var t = localStorage.getItem('theme');
+  if (t !== 'dark' && t !== 'light') {
+    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
   }
+  document.documentElement.className = t;
 })();
 </script>
