@@ -1,16 +1,19 @@
 <nav class="site-nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="%ROOT%/index.html">
-      <img class="logo-light" width="40" height="40" src="static/img/favicon.png" alt="DrN">
-      <img class="logo-dark" width="40" height="40" src="static/img/favicon-darkmode.png" alt="DrN">
+    <a class="nav-logo" href="%ROOT%/index.html" aria-label="Don't Rely on Nulls, home">
+      <svg class="mark" width="34" height="34" viewBox="0 0 48 48" aria-hidden="true">
+        <circle class="mark-ring" cx="24" cy="24" r="15"/>
+        <line class="mark-slash" x1="10" y1="38" x2="38" y2="10"/>
+      </svg>
+      <span class="wordmark">Don't Rely on Nulls</span>
     </a>
     <ul class="nav-links">
-      <li><a href="%ROOT%/index.html">Home</a></li>
-      <li><a href="%ROOT%/blog/index.html">Blog</a></li>
-      <li><a href="%ROOT%/team/index.html">Team</a></li>
-      <li><a href="%ROOT%/presentations/index.html">Presentations</a></li>
       <li><a href="%ROOT%/projects/index.html">Projects</a></li>
+      <li><a href="%ROOT%/team/index.html">Team</a></li>
+      <li><a href="%ROOT%/presentations/index.html">Talks</a></li>
+      <li><a href="%ROOT%/blog/index.html">Blog</a></li>
     </ul>
+    <a class="btn btn-primary nav-cta" href="%ROOT%/contact/index.html">Start a project</a>
     <button class="theme-toggle" aria-label="Toggle dark mode" onclick="(function(){var h=document.documentElement;var n=h.classList.contains('dark')?'light':'dark';h.className=n;localStorage.setItem('theme',n);})()">☀</button>
   </div>
 </nav>

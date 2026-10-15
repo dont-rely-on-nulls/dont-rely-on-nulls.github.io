@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <style>
+    .ring { fill: none; stroke: #252525; stroke-width: 5.5; }
+    .slash { stroke: #9b3333; stroke-width: 5.5; stroke-linecap: square; }
+    @media (prefers-color-scheme: dark) {
+      .ring { stroke: #fffffd; }
+      .slash { stroke: #e07a7a; }
+    }
+  </style>
+  <circle class="ring" cx="24" cy="24" r="15"/>
+  <line class="slash" x1="10" y1="38" x2="38" y2="10"/>
+</svg>

@@ -60,12 +60,11 @@
         (buffer-string))
     ""))
 
-;;; HTML fragments, replaces %ROOT% with the following:
-;;;   On dev -> out-dir
-;;;   On prod -> "https://www.dontrelynulls.org"
-(defvar root-href (if (string= (getenv "ENVIRONMENT") "dev")
-                      (directory-file-name out-dir)
-                    (directory-file-name out-url)))
+;;; HTML fragments, replaces %ROOT% with a placeholder that
+;;; `drn/fix-relative-paths' turns into a depth-aware relative path
+;;; ("" at the root, "../" one level down, ...), so internal links
+;;; work on any host: prod, a local server or file://.
+(defvar root-href "@ROOT@")
 (defvar html-head   (slurp (expand-file-name "header.html" static-html-dir)))
 (defvar html-nav    (replace-regexp-in-string
                      "%ROOT%" root-href
@@ -224,8 +223,9 @@ Entries link to the presentation's own page."
 
 ;;; Post-process: fix relative paths based on page depth
 (defun drn/fix-relative-paths (&rest _)
-  "Rewrite 'static/' paths in HTML files to be depth-aware.
-Replaces 'static/' with '../static/' based on page depth from root."
+  "Rewrite 'static/' paths and the root placeholder to be depth-aware.
+Replaces 'static/' with '../static/' and '@ROOT@/' with '../' based
+on page depth from root."
   (let ((html-files (directory-files-recursively out-dir "\\.html$")))
     (dolist (f html-files)
       (let ((rel  (file-relative-name f out-dir)))
@@ -243,6 +243,9 @@ Replaces 'static/' with '../static/' based on page depth from root."
             (goto-char (point-min))
             (while (re-search-forward "\\(\\(?:href\\|src\\)=\"\\)static/" nil t)
               (replace-match (concat "\\1" prefix "static/")))
+            (goto-char (point-min))
+            (while (search-forward (concat root-href "/") nil t)
+              (replace-match prefix t t))
             (write-region (point-min) (point-max) f))
           (when (> depth 0)
             (message "Fixed paths in %s (depth=%d)" f depth)))))))

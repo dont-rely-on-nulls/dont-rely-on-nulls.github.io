@@ -1,34 +1,125 @@
-#+TITLE: Don't Rely on Nulls — Rely on Us
-#+OPTIONS: toc:nil
-
-Fear of unreliable software? Relax and allow us to make your dream a reality with our unmatched attention to detail and diligence towards reputable software.
-
-* Quality as Paramount
-
-In our projects, we merge professional expertise with our blazing passion in functional programming --- all of it with a commitment to delivering solutions on time and within budget. From the ground up, we leverage both practical and theoretical strategies to create reliable software solutions that meet our clients' requirements whilst aiming to exceed expectations. We value partnerships with the open-source community, fostering an environment where diverse perspectives converge to shape tailored solutions that best fit the product.
+#+TITLE: Don't Rely on Nulls | Rely on Us
+#+OPTIONS: toc:nil title:nil
 
 #+BEGIN_EXPORT html
-<div style="margin-top: 2rem;">
-  <a class="btn btn-primary" href="./team/index.html">Get to know Us</a>
-</div>
-#+END_EXPORT
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">Boutique functional programming consultancy</p>
+    <h1>Don't rely on nulls.<br><span class="accent">Rely on us.</span></h1>
+    <p class="lead">Fear of unreliable software? Relax. We join your team and build dependable systems with an unmatched attention to detail, delivered on time and within budget.</p>
+    <div class="actions">
+      <a class="btn btn-primary btn-lg" href="./contact/index.html">Start a project</a>
+      <a class="btn btn-secondary btn-lg" href="./team/index.html">Meet the team</a>
+    </div>
+  </div>
+  <figure class="hero-quote">
+    <svg class="mark" width="120" height="120" viewBox="0 0 48 48" aria-hidden="true">
+      <circle class="mark-ring" cx="24" cy="24" r="15"/>
+      <line class="mark-slash" x1="10" y1="38" x2="38" y2="10"/>
+    </svg>
+    <figcaption>
+      <p class="quote">&ldquo;I call it my billion-dollar mistake.&rdquo;</p>
+      <p class="cite">Tony Hoare, on inventing the null reference. We design that mistake out before it reaches your users.</p>
+    </figcaption>
+  </figure>
+</section>
 
-* Humility and Learning
+<section class="bleed band-surface">
+  <div class="bleed-inner">
+    <div class="section-head">
+      <h2>What working with us feels like</h2>
+      <p>Three commitments we hold ourselves to on every engagement, from the first call to the handover.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <span class="card-num">01</span>
+        <h3>Quality as paramount</h3>
+        <p>We merge professional expertise with a blazing passion for doing things right, leveraging both practical and theoretical strategies to meet your requirements and aim to exceed them.</p>
+        <a class="text-link" href="./team/index.html">Get to know us</a>
+      </article>
+      <article class="card">
+        <span class="card-num">02</span>
+        <h3>Humility and learning</h3>
+        <p>Integrity and transparency are key. We hold ourselves to high ethical standards, stay humble learners in a fast moving landscape, and collaborate openly as a remote team.</p>
+        <a class="text-link" href="./projects/index.html">Check our projects</a>
+      </article>
+      <article class="card">
+        <span class="card-num">03</span>
+        <h3>Business value via FP</h3>
+        <p>Functional programming is how we keep software predictable. You get solutions built from first principles, maintainable enough that you'd like to frame them.</p>
+        <a class="text-link" href="./contact/index.html">Get started now</a>
+      </article>
+    </div>
+  </div>
+</section>
 
-Integrity and transparency are key to our approach. We adhere to the highest ethical standards and craftsmanship to ensure our solutions align seamlessly with our clients' objectives. In a rapidly evolving tech landscape, we remain humble learners, embracing ongoing education and exploration to shape the future of software development. Collaboration is at the heart of our ethos: our remote team unites towards the goal of casting bad solutions aside. Our hobby projects demonstrate how dedicated we are to braving uncharted territories in pursuit of defeating our perpetual enemy: stagnation.
+<section class="engage">
+  <div>
+    <p class="eyebrow">How we engage</p>
+    <h2>We join your team, not your backlog.</h2>
+  </div>
+  <ol class="steps">
+    <li><strong>Understand</strong><span>We start from first principles: what the product must do, what it must never do, and what that is worth to your business.</span></li>
+    <li><strong>Build together</strong><span>We work inside your team, on time and within budget, with an open source mindset that welcomes diverse perspectives.</span></li>
+    <li><strong>Hand over</strong><span>You deploy without fear and keep software your team can read, change and trust long after we are gone.</span></li>
+  </ol>
+</section>
 
-#+BEGIN_EXPORT html
-<div style="margin-top: 1rem;">
-  <a class="btn btn-primary" href="./projects/index.html">Check Projects</a>
-</div>
-#+END_EXPORT
+<section class="bleed band-dark">
+  <div class="bleed-inner">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Proof, in public</p>
+        <h2>We sharpen our craft in the open.</h2>
+      </div>
+      <p>Compilers, databases, game servers. Our hobby projects are how we brave uncharted territory in pursuit of defeating our perpetual enemy: stagnation.</p>
+    </div>
+    <div class="projects-grid">
+      <a href="https://github.com/dont-rely-on-nulls/sakura">
+        <span class="name">Sakura</span>
+        <span class="desc">An extended relational engine.</span>
+        <span class="meta">Databases &middot; OCaml</span>
+      </a>
+      <a href="https://github.com/dont-rely-on-nulls/karuta">
+        <span class="name">Karuta</span>
+        <span class="desc">A compiler for a relational programming language on the BEAM.</span>
+        <span class="meta">Compilers &middot; OCaml</span>
+      </a>
+      <a href="https://github.com/dont-rely-on-nulls/zerl">
+        <span class="name">Zerl</span>
+        <span class="desc">Idiomatic communication between Zig and BEAM nodes.</span>
+        <span class="meta">Interop &middot; Zig</span>
+      </a>
+      <a href="https://github.com/Dr-Nekoma/lyceum">
+        <span class="name">Lyceum</span>
+        <span class="desc">An MMO game with a Nix powered dev environment.</span>
+        <span class="meta">Games &middot; Erlang, Zig</span>
+      </a>
+    </div>
+    <div class="proof-facts">
+      <span>Talks at FuncProg Sweden 2024 and Gambiconf 2025</span>
+      <span>150+ study group videos on YouTube</span>
+      <a href="./projects/index.html">All projects</a>
+    </div>
+  </div>
+</section>
 
-* Business Value via FP
+<section class="team-teaser">
+  <div>
+    <h2>A small, senior, remote team.</h2>
+    <p>Backend, infrastructure, compilers and databases. People who genuinely have fun making software that fulfills its purpose.</p>
+  </div>
+  <a class="btn btn-secondary btn-lg" href="./team/index.html">Meet the team</a>
+</section>
 
-Your project is great, hence you are anxious about it. Here are the good news: we are here to join your team. Choose Don't rely on Nulls for dependable software solutions; something that you can rely on. Together, we will conquer the fear of deploying your treasure into the real world. We have the from-first-principles ideas, the tools, and the will to make it work. Take a deep breath: you are one small step away from a brighter digital horizon --- even if it is from zero you should not be afraid. The outcome will be pretty, and maintanable enough that you'd like to frame it. What are you waiting for?
-
-#+BEGIN_EXPORT html
-<div style="margin-top: 1rem;">
-  <a class="btn btn-primary" href="./contact/index.html">Get Started Now</a>
-</div>
+<section class="cta">
+  <div>
+    <h2>Your project is great.<br>That's why you're anxious.</h2>
+    <p>Take a deep breath. Even if you are starting from zero, you are one small step away from a brighter digital horizon.</p>
+  </div>
+  <div class="cta-contact">
+    <a class="btn btn-inverse btn-lg" href="mailto:contact@dontrelynulls.org">Email us</a>
+    <span>contact@dontrelynulls.org</span>
+  </div>
+</section>
 #+END_EXPORT
