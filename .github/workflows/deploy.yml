@@ -2,7 +2,7 @@ name: "Build & Deploy to GitHub Pages"
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
   pull_request:
 
 permissions:
@@ -39,7 +39,7 @@ jobs:
           path: ./result
 
   deploy:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs: build
     environment:
       name: github-pages
