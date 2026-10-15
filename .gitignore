@@ -62,3 +62,5 @@ ltximg
 
 # Do not commit the SQLite DB
 *.db
+.devenv
+.direnv
