@@ -261,6 +261,10 @@ on page depth from root."
 
 (defvar site-postamble html-footer)
 
+(defun drn/site-preamble (info)
+  (declare (ignore info))
+  site-preamble)
+
 ;;; org-publish project
 (setq org-publish-project-alist
       `(("site"
@@ -281,9 +285,9 @@ on page depth from root."
          :exclude-tags ("noexport")
 
          :html-head ,html-head
-         :html-preamble ,site-preamble
+         :html-preamble drn/site-preamble
          :html-postamble ,site-postamble
-          :completion-function drn/on-site-complete)
+         :completion-function drn/on-site-complete)
 
         ("images"
          :base-directory ,static-img-dir
