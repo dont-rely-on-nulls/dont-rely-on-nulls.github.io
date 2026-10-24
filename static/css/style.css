@@ -23,7 +23,7 @@
   --color-band: #252525;           /* dark section background */
   --color-band-text: #b4afb6;
   --color-band-heading: #fffffd;
-  --color-band-accent: #e07a7a;
+  --color-band-accent: #9b3333;
 
   --font-primary: 'Schibsted Grotesk', system-ui, sans-serif;
   --font-secondary: 'Schibsted Grotesk', system-ui, sans-serif;
@@ -40,10 +40,10 @@
 
 /* --- Dark mode (class toggle) ------------------------------------- */
 html.dark {
-  --color-primary: #e07a7a;
+  --color-primary: #9b3333;
   --color-primary-hover: #eb9a9a;
   --color-on-primary: #252525;
-  --color-signal: #e07a7a;
+  --color-signal: #9b3333;
   --color-body-bg: #252525;
   --color-text: #b4afb6;
   --color-text-dark: #fffffd;
@@ -58,10 +58,10 @@ html.dark {
 /* System dark mode (when no explicit theme set) */
 @media (prefers-color-scheme: dark) {
   html:not(.light) {
-    --color-primary: #e07a7a;
+    --color-primary: #9b3333;
     --color-primary-hover: #eb9a9a;
     --color-on-primary: #252525;
-    --color-signal: #e07a7a;
+    --color-signal: #9b3333;
     --color-body-bg: #252525;
     --color-text: #b4afb6;
     --color-text-dark: #fffffd;
@@ -333,7 +333,7 @@ main#content { min-height: 70vh; }
 #content > h1.title { max-width: 56rem; margin-bottom: 2rem; }
 #content > p,
 .outline-text-2 > p,
-.outline-text-3 > p { max-width: 44rem; }
+.outline-text-3 > p {}
 
 /* Section-style outlines */
 .outline-2 {

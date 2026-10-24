@@ -1,7 +1,7 @@
-#+TITLE: Presentations
+#+TITLE: Publications
 #+OPTIONS: toc:nil
 
-Talks and slide decks by the team, authored in Org-mode and compiled to LaTeX.
+Talks, papers, and slide decks by the team.
 
 #+BEGIN_EXPORT html
 <div class="blog-list">

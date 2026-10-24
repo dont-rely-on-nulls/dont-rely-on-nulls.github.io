@@ -43,7 +43,7 @@
 (defvar static-css-dir (expand-file-name "css" static-dir))
 (defvar org-dir (expand-file-name "org" root-dir))
 (defvar blog-dir (expand-file-name "blog" org-dir))
-(defvar presentations-dir (expand-file-name "presentations" org-dir))
+(defvar publications-dir (expand-file-name "publications" org-dir))
 (defvar roam-dir (expand-file-name "codex" org-dir))
 
 (defvar out-dir (expand-file-name "public" root-dir))
@@ -122,10 +122,10 @@
         (unless (string-empty-p val) val)))))
 
 (defun drn/generate-presentation-list ()
-  "Return HTML list of presentations, sorted anti-chronologically.
+  "Return HTML list of publications, sorted anti-chronologically.
 Each presentation Org file supplies #+TITLE:, #+DATE: and #+AUTHOR:.
 Entries link to the presentation's own page."
-  (let* ((files (directory-files presentations-dir t "\\.org$"))
+  (let* ((files (directory-files publications-dir t "\\.org$"))
          (entries '()))
     (dolist (f files)
       (let* ((fname (file-name-nondirectory f))
@@ -140,9 +140,9 @@ Entries link to the presentation's own page."
     (mapconcat
      (lambda (e)
        (let ((author-html (if (nth 2 e)
-                              (format " by: <span class=\"presenter\">\"%s\"</span>" (nth 2 e))
+                              (format " <span class=\"presenter\">by: %s</span>" (nth 2 e))
                             "")))
-         (format "\n    <article class=\"blog-card\">\n      <h2><a href=\"%s/presentations/%s.html\">%s</a></h2>\n      <time datetime=\"%s\">%s</time>%s\n    </article>"
+         (format "\n    <article class=\"blog-card\">\n      <h2><a href=\"%s/publications/%s.html\">%s</a></h2>\n      <time datetime=\"%s\">%s</time>%s\n    </article>"
                  root-href (nth 3 e) (nth 1 e) (nth 0 e) (nth 0 e) author-html)))
      entries "")))
 
