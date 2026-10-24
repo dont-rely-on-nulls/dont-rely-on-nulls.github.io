@@ -7,10 +7,10 @@
 <link rel="stylesheet" href="static/css/style.css">
 <script>
 (function(){
-  var t = localStorage.getItem('theme');
-  if (t !== 'dark' && t !== 'light') {
-    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
-  }
-  document.documentElement.className = t;
+  // var t = localStorage.getItem('theme');
+  // if (t !== 'dark' && t !== 'light') {
+  //   t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  // }
+  document.documentElement.className = 'light';
 })();
 </script>
